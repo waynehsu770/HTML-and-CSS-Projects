@@ -1,0 +1,11 @@
+p {
+	color: deepskyblue;
+	background: tan;
+	font-weight: bold;
+	text-align: center;
+}
+#shadow1 {
+	border: 1px solid;
+	padding: 10px;
+	box-shadow: 5px 10px gray;
+}
