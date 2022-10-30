@@ -2,3 +2,17 @@ p {
 	color: cadetblue;
 	text-align: left;
 }
+
+body {
+	opacity: 1;
+	transition: 1s opacity;
+}
+
+body.fade-out {
+	opacity: 0;
+	transition: none;
+}
+
+html {
+	background-color: black;
+}
