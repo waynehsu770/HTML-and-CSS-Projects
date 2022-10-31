@@ -17,7 +17,7 @@
             <a class="active" href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#github">Github</a>
-            <a href="#contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!-- Breaks to create space between the Navbar and first heading -->
@@ -27,7 +27,7 @@
         <!-- Background Video -->
         <div id="home">
             <video autoplay muted loop id="Video">
-                <source src="./video.mp4" type="video/mp4">
+                <source src="video.mp4" type="video/mp4">
                 <!-- Message displayed if video fails to run -->
                 Your browser does not support HTML5 video.
             </video>
@@ -85,27 +85,24 @@
             </div>
         </div>
 
-        <!-- Contact section -->
-        <div id="contact" class="row">
-            <!-- Left column -->
-            <div class="Column_2 Column_tall">
-                <img src="mail.jpg" alt="Contact_Image">
+        <!-- Contact form -->
+        <div id="contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                 <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+                     <h1>Contact</h1>
+                     <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                     <label for="email"><b>Email</b></label>		
+                       <input type="text" placeholder="Type your email address here" name="email" required>
+                     <label for="message"><b>Message</b></label>
+                       <input type="text" placeholder="Type your message here" name="message">
+          
+                     <button type="submit" class="btn">SUBMIT</button>
+                     <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                 </form>
             </div>
-            <!-- Right column -->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                 <!--This specifies where and how to send the form data; we are leaving it blank-->
-                 <form action="https://formspree.io/f/xwkzqdkz" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
-                </form>
-            </div>
-        </div>
+         </div>
 
         <!-- Footer section -->
         <footer>
@@ -114,6 +111,8 @@
                 <br>
             </p>
         </footer>
+
+        <script src="portfolio.js"></script>
     </body>
 
 </html>
